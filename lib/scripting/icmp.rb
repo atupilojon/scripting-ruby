@@ -7,3 +7,4 @@ icmp = Socket.new(
   Socket::SOCK_RAW,
   Socket::IPPROTO_ICMP
 )
+return icmp
