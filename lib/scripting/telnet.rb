@@ -28,8 +28,8 @@ begin
     puts(response)
     s.puts(gets) # Send the line to the server
   end
-rescue # If anything goes wrong
-  puts $! # Display the exception to the user
+rescue StandardError # If anything goes wrong
+  puts $ERROR_INFO # Display the exception to the user
 ensure # And no matter what happens
-  s.close if s # Don't forget to close the socket
+  s&.close # Don't forget to close the socket
 end
