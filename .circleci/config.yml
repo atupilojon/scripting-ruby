@@ -6,12 +6,12 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
+        environment:
+          BUNDLER_VERSION: 2.2.0.rc.1
     executor: ruby/default
     steps:
       - checkout
       - run:
-          name: install dependencies
-            command: |
-              gem update --system
-              gem install bundler:2.2.0.rc.1
+          name: Which bundler?
+          command: bundle -v
       - ruby/bundle-install
